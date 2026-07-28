@@ -2,8 +2,8 @@
 # NAME : MAGESH BOOPATHI.M
 # REG.NO : 212224230145
 
-Step1:
-Load an image from your local directory and display it.
+# Step1:
+# Load an image from your local directory and display it.
 ```python
 import cv2
 import matplotlib.pyplot as plt
@@ -23,14 +23,14 @@ plt.title("Original Image")
 plt.axis('off')  # Removes axis ticks and labels
 plt.show()
 ```
-Step2:
-o Draw a line from the top-left to the bottom-right of the image.
+#  Step2:
+# o Draw a line from the top-left to the bottom-right of the image.
 
-o Draw a circle at the center of the image. 
+# o Draw a circle at the center of the image. 
 
-o Draw a rectangle around a specific region of interest in the image. 
+# o Draw a rectangle around a specific region of interest in the image. 
 
-o Add the text "OpenCV Drawing" at the top-left corner of the image.
+# o Add the text "OpenCV Drawing" at the top-left corner of the image.
 Draw a line from the top-left to the bottom-right of the image
 ```python
 # Load the image
@@ -110,23 +110,23 @@ image = cv2.imread('images.jpg')
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 ```
 # Add text to the image
-```
+```python
 text_img = cv2.putText(img_rgb, "OpenCV Drawing", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 10)  ## cv2.putText(image, text, position, font, font_scale, color, thickness)
 ```
-```
+```python
 plt.imshow(text_img, cmap='viridis')  
 plt.title("Image with Text")
 plt.axis('off')  
 plt.show()
 ```
-Step3:
-o Convert the image from RGB to HSV and display it.
+# Step3:
+# o Convert the image from RGB to HSV and display it.
     
-o Convert the image from RGB to GRAY and display it. 
+# o Convert the image from RGB to GRAY and display it. 
 
-o Convert the image from RGB to YCrCb and display it. 
+# o Convert the image from RGB to YCrCb and display it. 
     
-o Convert the HSV image back to RGB and display it.
+# o Convert the HSV image back to RGB and display it.
 # Load the image
 ```
 image = cv2.imread('images.jpg') 
@@ -175,10 +175,10 @@ plt.imshow(image_hsv_to_rgb)
 plt.title("HSV to RGB Image")
 plt.axis("off")
 ```
-Step4:
-o Access and print the value of the pixel at coordinates (100, 100). 
+# Step4:
+# o Access and print the value of the pixel at coordinates (100, 100). 
 
-o Modify the color of the pixel at (200, 200) to white.
+# o Modify the color of the pixel at (200, 200) to white.
 ```python
 import cv2
 import matplotlib.pyplot as plt
@@ -222,8 +222,8 @@ else:
     plt.axis("off")
     plt.show()
 ```
-Step5:
-o Resize the original image to half its size and display it.
+# Step5:
+# o Resize the original image to half its size and display it.
 # Load the image
 ```python
 image = cv2.imread('images.jpg') 
@@ -245,8 +245,8 @@ plt.title("Resized Image (Half Size)")
 plt.axis("off")
 plt.show()
 ```
-Step6:
- Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
+# Step6:
+ # Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
 # Load the image
 ```python
 image = cv2.imread('images.jpg') 
@@ -263,10 +263,10 @@ plt.title("Cropped Region of Interest (ROI)")
 plt.axis("off")
 plt.show()
 ```
-Step7:
-o Flip the original image horizontally and display it. 
+# Step7:
+# o Flip the original image horizontally and display it. 
 
-o Flip the original image vertically and display it.
+# o Flip the original image vertically and display it.
 # Load the image
 ```python
 image = cv2.imread('images.jpg') 
@@ -293,8 +293,8 @@ plt.imshow(flipped_vertically_rgb)
 plt.title("Flipped Vertically")
 plt.axis("off")
 ```
-Step8:
-o Save the final modified image to your local directory.
+# Step8:
+# o Save the final modified image to your local directory.
 
 
 
