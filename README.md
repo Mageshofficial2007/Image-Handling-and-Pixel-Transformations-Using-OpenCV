@@ -3,35 +3,38 @@
 # REG.NO : 212224230145
 
 # Step1:
-# Load an image from your local directory and display it.
+## Load an image from your local directory and display it.
 ```python
 import cv2
 import matplotlib.pyplot as plt
 ```
-# Read the image using OpenCV
+## Read the image using OpenCV
 ```python
 img = cv2.imread('images.jpg', cv2.IMREAD_COLOR)
 ```
-# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+## Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
 ```python
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 ```
-# Display the image using Matplotlib
+## Display the image using Matplotlib
 ```python
 plt.imshow(img_rgb, cmap='viridis')  # You can change 'viridis' to another cmap or use None for RGB images
 plt.title("Original Image")
 plt.axis('off')  # Removes axis ticks and labels
 plt.show()
 ```
+![](<screenshots/Screenshot 2026-07-28 130902.png>)
+
 #  Step2:
-# o Draw a line from the top-left to the bottom-right of the image.
+##  o Draw a line from the top-left to the bottom-right of the image.
 
-# o Draw a circle at the center of the image. 
+##  o Draw a circle at the center of the image. 
 
-# o Draw a rectangle around a specific region of interest in the image. 
+## o Draw a rectangle around a specific region of interest in the image. 
 
-# o Add the text "OpenCV Drawing" at the top-left corner of the image.
-Draw a line from the top-left to the bottom-right of the image
+## o Add the text "OpenCV Drawing" at the top-left corner of the image.
+
+## Draw a line from the top-left to the bottom-right and bottom-left of the image
 ```python
 # Load the image
 image = cv2.imread('images.jpg') 
@@ -61,17 +64,20 @@ plt.title("Image with Double Diagonal Lines")
 plt.axis("off")
 plt.show()
 ```
-Draw a circle at the center of the image.
-# Load the image
+![alt text](<screenshots/Screenshot 2026-07-28 130911.png>)
+
+## Draw a circle at the center of the image.
+
 ```
+## Load the image
 image = cv2.imread('images.jpg')
 ```
-# Convert BGR to RGB
+## Convert BGR to RGB
 ```img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 img_rgb.shape
 ```
-# Replace circle with square
+## Replace circle with square
 ```square_img = cv2.rectangle(img_rgb, (200, 30), (500, 330), (255, 0, 0), 10)
 # cv2.rectangle(image, top_left, bottom_right, color, thickness)
 ```
@@ -81,17 +87,20 @@ plt.title("Image with Square")
 plt.axis('off')
 plt.show()
 ```
-Draw a rectangle around  the whole image
-# Load the image
+![alt text](<screenshots/Screenshot 2026-07-28 130945.png>)
+## Draw a rectangle around  the whole image
+
 ```
+## Load the image
 image = cv2.imread('images.jpg') 
 ```
-# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+
 ```
+## Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img.shape
 ```
-# Draw a rectangle around the Whole image
+## Draw a rectangle around the Whole image
 ```
 rectangle_img = cv2.rectangle(img_rgb, (0, 0), (690, 387), (0, 0, 255), 10)  # cv2.rectangle(image, start_point, end_point, color, thickness)
 
@@ -100,16 +109,19 @@ plt.title("Image with Rectangle")
 plt.axis('off')  
 plt.show()
 ```
-Add the text "OpenCV Drawing" at the top-left corner of the image.
-# Load the image
+![alt text](<screenshots/Screenshot 2026-07-28 131155.png>)
+## Add the text "OpenCV Drawing" at the top-left corner of the image.
+
 ```
+## Load the image
 image = cv2.imread('images.jpg') 
 ```
-# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
+
 ```
+## Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 ```
-# Add text to the image
+## Add text to the image
 ```python
 text_img = cv2.putText(img_rgb, "OpenCV Drawing", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 10)  ## cv2.putText(image, text, position, font, font_scale, color, thickness)
 ```
@@ -119,66 +131,77 @@ plt.title("Image with Text")
 plt.axis('off')  
 plt.show()
 ```
-# Step3:
-# o Convert the image from RGB to HSV and display it.
-    
-# o Convert the image from RGB to GRAY and display it. 
+![alt text](<screenshots/Screenshot 2026-07-28 131207.png>)
 
-# o Convert the image from RGB to YCrCb and display it. 
+# Step3:
+## o Convert the image from RGB to HSV and display it.
     
-# o Convert the HSV image back to RGB and display it.
-# Load the image
+## o Convert the image from RGB to GRAY and display it. 
+
+## o Convert the image from RGB to YCrCb and display it. 
+    
+## o Convert the HSV image back to RGB and display it.
+
 ```
+## Load the image
 image = cv2.imread('images.jpg') 
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 ```
-# Original RGB Image
+
 ```
+## Original RGB Image
 plt.imshow(image_rgb)
 plt.title("Original RGB Image")
 plt.axis("off")
 ```
-# Convert RGB to HSV
-```
+![alt text](<screenshots/Screenshot 2026-07-28 131225.png>)
+## Convert RGB to HSV
+```python
 image_hsv = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2HSV)
 ```
-# HSV Image
+
 ```
+## HSV Image
 plt.imshow(image_hsv)
 plt.title("HSV Image")
 plt.axis("off")
 ```
-# Convert RGB to GRAY
-```
+![alt text](<screenshots/Screenshot 2026-07-28 131234.png>)
+## Convert RGB to GRAY
+```python
 image_gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
 ```
-# Grayscale Image
-```
+
+```python
+## Grayscale Image
 plt.imshow(image_gray, cmap='gray')
 plt.title("Grayscale Image")
 plt.axis("off")
 ```
-# Convert RGB to YCrCb
+![alt text](<screenshots/Screenshot 2026-07-28 131259.png>)
+## Convert RGB to YCrCb
 ```
 image_ycrcb = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2YCrCb)
 ```
-# YCrCb Image
-```
+```python
+## YCrCb Image
 plt.imshow(image_ycrcb)
 plt.title("YCrCb Image")
 plt.axis("off")
 ```
-# Convert HSV back to RGB
-```
+![alt text](<screenshots/Screenshot 2026-07-28 131318.png>)
+## Convert HSV back to RGB
+```python
 image_hsv_to_rgb = cv2.cvtColor(image_hsv, cv2.COLOR_HSV2RGB)
 plt.imshow(image_hsv_to_rgb)
 plt.title("HSV to RGB Image")
 plt.axis("off")
 ```
+![alt text](<screenshots/Screenshot 2026-07-28 131351.png>)
 # Step4:
 # o Access and print the value of the pixel at coordinates (100, 100). 
 
-# o Modify the color of the pixel at (200, 200) to white.
+# o Modify the color of the pixel at (200, 200) to white & add small photo.
 ```python
 import cv2
 import matplotlib.pyplot as plt
@@ -222,38 +245,46 @@ else:
     plt.axis("off")
     plt.show()
 ```
+![alt text](<screenshots/Screenshot 2026-07-28 131400.png>)
 # Step5:
 # o Resize the original image to half its size and display it.
-# Load the image
+
 ```python
+# Load the image
 image = cv2.imread('images.jpg') 
 image.shape
 ```
-# Resize the image to half its size
+
 ```python
+# Resize the image to half its size
 resized_image = cv2.resize(image, (690 // 2, 387 // 2))  # (new_width, new_height)
 ```
+
 # Convert BGR to RGB for displaying with Matplotlib
 ```python
 resized_image_rgb = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
-```
+
 resized_image_rgb.shape
-# Display the resized image
+```
+
 ```python
+# Display the resized image
 plt.imshow(resized_image_rgb)
 plt.title("Resized Image (Half Size)")
 plt.axis("off")
 plt.show()
 ```
+![alt text](<screenshots/Screenshot 2026-07-28 131409.png>)
 # Step6:
  # Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
-# Load the image
+
 ```python
+# Load the image
 image = cv2.imread('images.jpg') 
 image.shape
 ```
-# Crop a 300x300 region starting from (50, 50)
 ```python
+# Crop a 300x300 region starting from (50, 50)
 roi = image[50:350, 50:350]  # Rows: 50-349, Columns: 50-349
 # Convert BGR to RGB for displaying with Matplotlib
 roi_rgb = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
@@ -263,12 +294,13 @@ plt.title("Cropped Region of Interest (ROI)")
 plt.axis("off")
 plt.show()
 ```
+![alt text](<screenshots/Screenshot 2026-07-28 131416.png>)
 # Step7:
 # o Flip the original image horizontally and display it. 
 
 # o Flip the original image vertically and display it.
-# Load the image
 ```python
+# Load the image
 image = cv2.imread('images.jpg') 
 # Flip the image horizontally (left-right)
 flipped_horizontally = cv2.flip(image, 1)
@@ -279,6 +311,7 @@ plt.imshow(flipped_horizontally_rgb)
 plt.title("Flipped Horizontally")
 plt.axis("off")
 ```
+![alt text](<screenshots/Screenshot 2026-07-28 131422.png>)
 # Flip the image vertically (up-down)
 ```python
 flipped_vertically = cv2.flip(image, 0)
@@ -287,12 +320,13 @@ flipped_vertically = cv2.flip(image, 0)
 ```python
 flipped_vertically_rgb = cv2.cvtColor(flipped_vertically, cv2.COLOR_BGR2RGB)
 ```
-# Vertical flip
 ```python
+# Vertical flip
 plt.imshow(flipped_vertically_rgb)
 plt.title("Flipped Vertically")
 plt.axis("off")
 ```
+![alt text](<screenshots/Screenshot 2026-07-28 131429.png>)
 # Step8:
 # o Save the final modified image to your local directory.
 
